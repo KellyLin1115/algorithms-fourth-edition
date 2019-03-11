@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class BinarySearch {
+    private BinarySearch() {}
+
     public static int rank(int[] a, int key) {
         int low = 0;
         int high = a.length - 1;
