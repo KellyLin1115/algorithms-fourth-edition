@@ -38,12 +38,6 @@ public class Merge {
         }
     }
 
-    private static void exch(Comparable[] a, int i, int j){
-        Comparable swap = a[i];
-        a[i] = a[j];
-        a[j] = swap;
-    }
-
     public static void main(String[] args) {
         Integer[] a = new Integer[13];
         Random rand = new Random();
