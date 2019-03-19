@@ -2,18 +2,24 @@ package chapter2.item1;
 
 import java.util.Random;
 
-public class Insertion {
+public class Shell {
 
-    private Insertion() {}
+    private Shell() {}
 
     public static void sort(Comparable[] a){
         int n = a.length;
-        for (int i = 1; i < n; i++) {
-            for (int j = i; j > 0; j--) {
-                if(a[j].compareTo(a[j-1]) < 0) exch(a, j, j-1);
-                else break;
+        int h = 1;
+        while(h < n/3) h = 3*h + 1;
+        while(h >= 1) {
+            for (int i = h; i < n; i++) {
+                for (int j = i; j >= h; j -= h) {
+                    if (a[j].compareTo(a[j - h]) < 0) exch(a, j, j - h);
+                    else break;
+                }
             }
+            h = h / 3;
         }
+
     }
 
     private static void exch(Comparable[] a, int i, int j){
@@ -23,7 +29,7 @@ public class Insertion {
     }
 
     public static void main(String[] args) {
-        Integer[] a = new Integer[11];
+        Integer[] a = new Integer[12];
         Random rand = new Random();
         for (int i = 0; i < a.length; i++) {
             a[i] = rand.nextInt(100);
