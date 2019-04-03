@@ -30,6 +30,10 @@ public class Bag<Item> implements Iterable<Item> {
         n++;
     }
 
+    public int size() {
+        return n;
+    }
+
     public String toString(){
         StringBuilder s = new StringBuilder();
         for (Item item: this)
